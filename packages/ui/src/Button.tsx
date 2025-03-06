@@ -6,7 +6,7 @@ export interface ButtonProps {
   variant?: 'primary' | 'secondary';
 }
 
-export const Button = ({ children, onClick, variant = 'primary' }: ButtonProps) => {
+export const Button: React.FC<ButtonProps> = ({ children, onClick, variant = 'primary' }) => {
   return (
     <button
       onClick={onClick}

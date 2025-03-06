@@ -15,14 +15,20 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "dev:blog": "turbo run dev --filter=blog",
     "dev:project-a": "turbo run dev --filter=project-a",
-    "dev:project-b": "turbo run dev --filter=project-b"
+    "dev:project-b": "turbo run dev --filter=project-b",
+    "preview": "turbo run preview",
+    "preview:blog": "turbo run preview --filter=blog",
+    "preview:project-a": "turbo run preview --filter=project-a",
+    "preview:project-b": "turbo run preview --filter=project-b"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
     "prettier": "^3.0.0",
-    "turbo": "^1.10.0"
+    "turbo": "^1.10.0",
+    "vite": "^6.2.0"
   },
   "engines": {
     "node": ">=18.0.0"
   },
   "packageManager": "pnpm@8.6.0"
-} 
+}
