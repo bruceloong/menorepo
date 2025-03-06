@@ -20,10 +20,10 @@ export default function Home() {
       <div className="mt-8">
         <h2 className="text-2xl font-semibold mb-4">Our Projects</h2>
         <div className="flex gap-4">
-          <a href="http://localhost:3001">
+          <a href={process.env.NEXT_PUBLIC_PROJECT_A_URL}>
             <Button variant="secondary">Project A</Button>
           </a>
-          <a href="http://localhost:3002">
+          <a href={process.env.NEXT_PUBLIC_PROJECT_B_URL}>
             <Button variant="secondary">Project B</Button>
           </a>
         </div>
