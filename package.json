@@ -19,7 +19,9 @@
     "preview": "turbo run preview",
     "preview:blog": "turbo run preview --filter=blog",
     "preview:project-a": "turbo run preview --filter=project-a",
-    "preview:project-b": "turbo run preview --filter=project-b"
+    "preview:project-b": "turbo run preview --filter=project-b",
+    "start": "turbo run start",
+    "start:blog": "turbo run start --filter=blog"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
