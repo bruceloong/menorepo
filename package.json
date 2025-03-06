@@ -13,15 +13,16 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev:blog": "turbo run dev --filter=blog",
+    "dev:portfolio": "turbo run dev --filter=portfolio",
     "dev:project-a": "turbo run dev --filter=project-a",
     "dev:project-b": "turbo run dev --filter=project-b",
     "preview": "turbo run preview",
-    "preview:blog": "turbo run preview --filter=blog",
     "preview:project-a": "turbo run preview --filter=project-a",
     "preview:project-b": "turbo run preview --filter=project-b",
     "start": "turbo run start",
-    "start:blog": "turbo run start --filter=blog"
+    "start:portfolio": "turbo run start --filter=portfolio",
+    "build:static": "turbo run build-static --filter=portfolio",
+    "build:all": "pnpm build && pnpm build:static"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",

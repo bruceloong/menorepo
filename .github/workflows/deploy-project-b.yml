@@ -1,0 +1,44 @@
+name: Deploy Project B to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'apps/projects/project-b/**'
+      - 'packages/**'
+      - '.github/workflows/deploy-project-b.yml'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.6.0
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm --filter=project-b build
+
+      - name: Create .nojekyll file
+        run: touch apps/projects/project-b/dist/.nojekyll
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: apps/projects/project-b/dist
+          branch: gh-pages
+          repository-name: YOUR_GITHUB_USERNAME/project-b
+          token: ${{ secrets.GH_PAGES_TOKEN }}
+          # 如果部署到同一仓库的gh-pages分支，可以删除repository-name行

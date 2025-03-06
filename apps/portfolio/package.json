@@ -1,10 +1,13 @@
 {
-  "name": "blog",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
+    "post-export": "node scripts/post-export.js",
+    "build-static": "next build && next export && npm run post-export",
     "start": "next start",
     "lint": "next lint"
   },
